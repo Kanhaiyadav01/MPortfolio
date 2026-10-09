@@ -12,14 +12,21 @@ export const Footer: React.FC = () => {
       {/* Tier 1: Call to Action */}
       <div className="footer-tier footer-cta-tier">
         <p className="footer-cta-text">
-          If you've read this far, you might be interested in what I do.
+          I'm a freelance software developer turning ideas into useful digital products. I build scalable web applications, robust backends, and cool stuff that solves real-world problems through clean code and practical engineering.
         </p>
         <a
-          href="mailto:kanhaiyakumar25213@gmail.com"
-          onClick={playClickSound}
+          href="#contact"
+          onClick={(e) => {
+            playClickSound();
+            const contactElem = document.getElementById('contact');
+            if (contactElem) {
+              e.preventDefault();
+              contactElem.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
           className="footer-talk-btn"
         >
-          <span>Let's Talk</span>
+          <span>HIRE ME</span>
           <FaArrowRight className="btn-arrow" />
         </a>
       </div>
