@@ -1,0 +1,59 @@
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-bubble {
+  position: absolute;
+  background-color: var(--bg-surface, #1a1b1c);
+  color: var(--text-primary, #ffffff);
+  border: 1px solid var(--border-default, #444);
+  border-radius: var(--radius-xl, 6px);
+  padding: 4px 10px;
+  font-family: var(--font-ui, sans-serif);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  pointer-events: none;
+  animation: tooltip-spring 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes tooltip-spring {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.tooltip-top {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+}
+
+.tooltip-bottom {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+}
+
+.tooltip-left {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 8px;
+}
+
+.tooltip-right {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 8px;
+}

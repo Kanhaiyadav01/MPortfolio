@@ -1,0 +1,215 @@
+.navbar-header-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px dashed var(--border-dashed);
+}
+
+.navbar-max-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  height: 48px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-left: 1px dashed var(--border-dashed);
+  border-right: 1px dashed var(--border-dashed);
+}
+
+.navbar-brand-logo {
+  font-size: 1.85rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-decoration: none;
+  line-height: 1;
+}
+
+.navbar-center-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-more-dropdown-container {
+  position: relative;
+}
+
+.nav-more-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+}
+
+.nav-more-btn:hover {
+  color: var(--text-primary);
+}
+
+.chevron-icon {
+  font-size: 0.9em;
+  transition: transform 0.2s ease;
+}
+
+.chevron-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.more-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 6px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-dashed);
+  border-radius: 6px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 140px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+}
+
+.dropdown-item {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+}
+
+.navbar-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-toggle-btn {
+  background: none;
+  border: 1px dashed var(--border-dashed);
+  color: var(--text-primary);
+  font-size: 1.15rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--bg-surface-elevated);
+  transform: translateY(-1px);
+}
+
+.theme-icon {
+  font-size: 1.15rem;
+}
+
+.mobile-hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-hamburger-btn:hover {
+  background-color: var(--bg-surface-elevated);
+}
+
+.hamburger-icon {
+  display: block;
+}
+
+/* Mobile Dropdown Menu Overlay */
+.mobile-menu-overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 8px 16px 16px 16px;
+  background-color: rgba(11, 13, 14, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px dashed var(--border-dashed);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.mobile-menu-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--bg-surface, #1a1b1c);
+  border: 1px dashed var(--border-dashed, #333);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobile-nav-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+}
+
+@media (max-width: 700px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-hamburger-btn {
+    display: flex;
+  }
+  .navbar-max-wrapper {
+    padding: 0 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar-brand-logo {
+    font-size: 1.6rem;
+  }
+}

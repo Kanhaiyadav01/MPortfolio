@@ -1,0 +1,109 @@
+.skill-section {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-primary), transparent);
+}
+
+.marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-primary), transparent);
+}
+
+.marquee-track {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track.margin-top {
+  margin-top: 4px;
+}
+
+.animate-marquee {
+  display: flex;
+  flex-shrink: 0;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee.reverse {
+  animation-direction: reverse;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.skill-pill {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  background-color: var(--bg-surface, #1a1b1c);
+  border: 1px solid var(--border-default, #444444);
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin-right: 12px;
+  white-space: nowrap;
+  font-family: 'Figtree', 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary, #ffffff);
+  box-shadow:
+    0px 16px 32px -8px rgba(0, 0, 0, 0.4),
+    0px 4px 8px -2px rgba(0, 0, 0, 0.3),
+    inset 0px 0px 0px 1px rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+.skill-pill:hover {
+  border-color: var(--border-hover, #888888);
+  background-color: var(--bg-surface-elevated, #232326);
+  transform: translateY(-1px);
+}
+
+.skill-icon {
+  font-size: 1.15em;
+  display: inline-block;
+}
+
+.skill-name {
+  letter-spacing: 0.3px;
+}

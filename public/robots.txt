@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kanhaiyayadav.vercel.app/sitemap.xml

@@ -1,0 +1,186 @@
+/* Global Theme Variables */
+:root,
+html.dark {
+  --bg-primary: #0F0E0E;
+  --bg-surface: #141414;
+  --bg-surface-elevated: #1F1F1F;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A3A3A3;
+  --text-tertiary: #737373;
+  --text-dim: #525252;
+  --border-dashed: #272727;
+  --border-solid: #333333;
+  --border-hover: #666666;
+  --accent-green: #22c55e;
+  --nav-bg: rgba(15, 14, 14, 0.85);
+}
+
+html.light {
+  --bg-primary: #FFFFFF;
+  --bg-surface: #F5F5F5;
+  --bg-surface-elevated: #E5E5E5;
+  --text-primary: #0F0E0E;
+  --text-secondary: #525252;
+  --text-tertiary: #737373;
+  --text-dim: #A3A3A3;
+  --border-dashed: #E5E5E5;
+  --border-solid: #D4D4D4;
+  --border-hover: #A3A3A3;
+  --accent-green: #16a34a;
+  --nav-bg: rgba(255, 255, 255, 0.85);
+}
+
+/* Base Styles */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Serif Font Class for Brand Logo & Name */
+.font-serif-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Layout Containers with Dashed Borders matching reference */
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px;
+  border-left: 1px dashed var(--border-dashed);
+  border-right: 1px dashed var(--border-dashed);
+  position: relative;
+  z-index: 10;
+  transition: border-color 0.2s ease;
+}
+
+/* Squircle DP Avatar Shape (12px rounded square) */
+.squircle-dp-container {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 12px;
+  background-color: var(--bg-surface-elevated);
+  padding: 4px;
+  flex-shrink: 0;
+  border: 1px solid var(--border-dashed);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .squircle-dp-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 14px;
+  }
+}
+
+.squircle-dp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 9px;
+  display: block;
+}
+
+/* Navigation active underline indicator */
+.nav-link-item {
+  position: relative;
+  padding: 4px 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.nav-link-item:hover,
+.nav-link-item.active {
+  color: var(--text-primary);
+}
+
+.nav-link-underline,
+.nav-link-dot {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 1px;
+  background-color: var(--text-primary);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.theme-toggle-btn:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-surface);
+  border-color: var(--border-dashed);
+}
+
+/* Pulse Dot Animation */
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+.status-dot-active {
+  animation: pulse-dot 1.2s ease-in-out infinite;
+}
+
+/* Heartbeat Animation */
+@keyframes heart-beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.heart-beat-icon {
+  display: inline-block;
+  color: red;
+  animation: heart-beat 2s ease-in-out infinite;
+}

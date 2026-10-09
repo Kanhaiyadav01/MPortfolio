@@ -1,0 +1,136 @@
+.experience-section {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  border-left: none;
+  padding-left: 0;
+}
+
+.experience-card-item {
+  background-color: transparent;
+  border: 1px dashed var(--border-dashed, #272727);
+  border-radius: var(--radius-sm, 6px);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.experience-card-item:hover {
+  border-color: var(--border-hover, #666);
+}
+
+.card-header {
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: var(--bg-surface, #141414);
+}
+
+.company-info-col {
+  display: flex;
+  align-items: center;
+}
+
+.role-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.company-name {
+  font-family: var(--font-ui, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary, #ffffff);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.role-subtitle {
+  font-family: var(--font-ui, sans-serif);
+  font-size: 0.86rem;
+  color: var(--text-secondary, #a3a3a3);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.dates-col {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.82rem;
+  color: var(--text-secondary, #a3a3a3);
+}
+
+.dates-text {
+  font-size: 0.82rem;
+  color: var(--text-secondary, #a3a3a3);
+}
+
+.expand-btn {
+  color: var(--text-secondary, #a3a3a3);
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.experience-card-item:hover .expand-btn {
+  color: var(--text-primary, #ffffff);
+}
+
+.card-body {
+  padding: 18px 20px;
+  border-top: 1px dashed var(--border-dashed, #272727);
+  background-color: var(--bg-primary, #0f0e0e);
+}
+
+.desc-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: var(--font-ui, sans-serif);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-secondary, #a3a3a3);
+}
+
+.desc-bullets li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.desc-bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--text-tertiary, #737373);
+}
+
+.calendar-wrapper-container {
+  margin-top: 24px;
+}
+
+@media (max-width: 480px) {
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .dates-col {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

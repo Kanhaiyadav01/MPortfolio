@@ -1,0 +1,32 @@
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-loading, #0a0a0a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.chip-svg {
+  width: 80px;
+  height: 80px;
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+.loading-text {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.9rem;
+  color: var(--text-secondary, #b3b3b3);
+  letter-spacing: 0.05em;
+}

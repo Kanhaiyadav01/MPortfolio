@@ -1,0 +1,263 @@
+.hero-section-samworks {
+  width: 100%;
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Landscape Banner */
+.hero-banner-container {
+  width: 100%;
+  height: 140px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--bg-surface-elevated);
+  border: 1px dashed var(--border-dashed);
+}
+
+@media (min-width: 640px) {
+  .hero-banner-container {
+    height: 200px;
+  }
+}
+
+.hero-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Profile Row */
+.hero-profile-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+}
+
+@media (min-width: 640px) {
+  .hero-profile-row {
+    gap: 24px;
+  }
+}
+
+.hero-info-column {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-info-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
+}
+
+.half-moon-icon-wrapper {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+  transform: rotate(180deg);
+}
+
+.half-moon-svg {
+  display: block;
+}
+
+.hero-name-serif {
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+@media (min-width: 640px) {
+  .hero-name-serif {
+    font-size: 2.35rem;
+  }
+}
+
+.hero-role-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}
+
+@media (min-width: 640px) {
+  .hero-role-text {
+    font-size: 1.05rem;
+  }
+}
+
+.hero-location-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}
+
+@media (min-width: 640px) {
+  .hero-location-text {
+    font-size: 0.82rem;
+  }
+}
+
+.hero-views-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 6px;
+}
+
+.hero-panda-mascot-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.hero-panda-mascot-wrapper:hover {
+  transform: scale(1.08);
+}
+
+.view-counter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-tertiary);
+  font-size: 0.82rem;
+}
+
+.eye-icon {
+  font-size: 1rem;
+}
+
+/* About Box */
+.hero-about-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 0;
+  border-top: 1px dashed var(--border-dashed);
+  border-bottom: 1px dashed var(--border-dashed);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.about-bullet-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.bullet-dot {
+  color: var(--text-tertiary);
+  font-weight: bold;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/* Social Grid Buttons */
+.hero-social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 4px;
+}
+
+@media (min-width: 640px) {
+  .hero-social-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.social-grid-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  background-color: var(--bg-surface);
+  border: 1px dashed var(--border-dashed);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.social-grid-btn:hover {
+  background-color: var(--bg-surface-elevated);
+  border-color: var(--border-hover);
+  transform: translateY(-1px);
+}
+
+.social-icon {
+  font-size: 1.1rem;
+}
+
+.social-label {
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .hero-section-samworks {
+    margin-top: 52px;
+    gap: 12px;
+  }
+
+  .hero-profile-row {
+    gap: 12px;
+  }
+
+  .hero-name-serif {
+    font-size: 1.5rem;
+  }
+
+  .hero-role-text {
+    font-size: 0.78rem;
+    margin-top: 2px;
+  }
+
+  .hero-location-text {
+    font-size: 0.68rem;
+    margin-top: 2px;
+  }
+
+  .social-grid-btn {
+    padding: 8px 6px;
+    font-size: 0.78rem;
+    gap: 6px;
+  }
+
+  .social-icon {
+    font-size: 1rem;
+  }
+
+  .hero-about-box {
+    font-size: 0.84rem;
+    gap: 8px;
+    padding: 12px 0;
+  }
+}
